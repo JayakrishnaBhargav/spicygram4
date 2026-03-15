@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spicy Gram Restaurant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:#111;
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:600;
+color:#e53935;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#e53935;
+}
+
+/* HERO SLIDER */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.overlay h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.overlay p{
+color:#ddd;
+margin-bottom:25px;
+}
+
+/* BUTTONS */
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+background:#e53935;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+background:#b71c1c;
+}
+
+/* SEARCH BAR */
+
+.search-container{
+margin-top:120px;
+text-align:center;
+}
+
+#searchInput{
+padding:12px 20px;
+width:60%;
+max-width:400px;
+border-radius:30px;
+border:none;
+outline:none;
+font-size:16px;
+background:#1c1c1c;
+color:white;
+}
+
+/* MENU */
+
+.menu{
+padding:90px 8%;
+}
+
+.menu h2{
+text-align:center;
+margin-bottom:40px;
+color:#e53935;
+font-size:35px;
+}
+
+.category{
+margin-bottom:50px;
+}
+
+.category h3{
+margin-bottom:20px;
+color:#f1f1f1;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+/* MENU CARD */
+
+.card{
+background:#151515;
+border-radius:12px;
+overflow:hidden;
+transition:0.4s;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.8);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+}
+
+.info h4{
+margin-bottom:5px;
+}
+
+.price{
+color:#e53935;
+font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:25px;
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.overlay h1{
+font-size:32px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="logo">SPICY GRAM</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555992336-03a23c7b20ee')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')"></div>
+
+<div class="overlay">
+
+<h1>Spicy Gram Restaurant</h1>
+<p>Authentic Mandi • Premium Experience</p>
+
+<div class="btns">
+
+<a class="btn" href="tel:+919133612923">Call Now</a>
+
+<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=17.5628031,78.4537448">View Location</a>
+
+<a class="btn" target="_blank"
+href="https://wa.me/919133612923?text=Hello%20I%20want%20to%20order%20food">
+Order on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SEARCH -->
+
+<div class="search-container">
+<input type="text" id="searchInput" placeholder="Search food like Mandi, Chicken...">
+</div>
+
+<!-- MENU -->
+
+<section class="menu" id="menu">
+
+<h2>Our Special Menu</h2>
+
+<!-- MANDI -->
+
+<div class="category">
+
+<h3>Mandi Specials</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+<div class="info">
+<h4>Chicken Mandi</h4>
+<p class="price">₹320</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a">
+<div class="info">
+<h4>Mutton Mandi</h4>
+<p class="price">₹420</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56">
+<div class="info">
+<h4>Al Faham Mandi</h4>
+<p class="price">₹380</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/w8iD8v-2xE0/maxresdefault.jpg">
+<div class="info">
+<h4>Mixed Mandi</h4>
+<p class="price">₹520</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- STARTERS -->
+
+<div class="category">
+
+<h3>Starters</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7">
+<div class="info">
+<h4>Chicken 65</h4>
+<p class="price">₹190</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4">
+<div class="info">
+<h4>Dragon Chicken</h4>
+<p class="price">₹210</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec">
+<div class="info">
+<h4>Paneer Tikka</h4>
+<p class="price">₹170</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- DRINKS -->
+
+<div class="category">
+
+<h3>Soft Drinks</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1554866585-cd94860890b7">
+<div class="info">
+<h4>Coca Cola</h4>
+<p class="price">₹50</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581636625402-29b2a704ef13">
+<div class="info">
+<h4>Pepsi</h4>
+<p class="price">₹50</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+<div class="info">
+<h4>Fresh Lime Soda</h4>
+<p class="price">₹70</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87">
+<div class="info">
+<h4>Mango Juice</h4>
+<p class="price">₹90</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2026 Spicy Gram Restaurant
+</footer>
+
+<script>
+
+/* HERO SLIDER */
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function changeSlide(){
+
+slides[index].classList.remove("active");
+
+index++;
+
+if(index >= slides.length){
+index = 0;
+}
+
+slides[index].classList.add("active");
+
+}
+
+setInterval(changeSlide,4000);
+
+/* SEARCH FUNCTION */
+
+let searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+
+let value = this.value.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+
